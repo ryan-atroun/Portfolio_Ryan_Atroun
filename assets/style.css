@@ -7,11 +7,14 @@
   --accent-soft: rgba(37, 99, 235, 0.08);
   --accent-border-hover: rgba(37, 99, 235, 0.35);
   --border: #d0d7e2;
+  --border-glass: rgba(148, 163, 184, 0.35);
   --muted: #6b7280;
   --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
   --shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+  --shadow-accent: 0 8px 18px rgba(37, 99, 235, 0.26);
   --radius: 1rem;
   --z-header: 20;
+  --scroll-offset: 5.5rem;
   --bg-glow-1: rgba(59, 130, 246, 0.18);
   --bg-glow-2: rgba(14, 165, 233, 0.15);
   --hero-card-start: rgba(15, 23, 42, 0.94);
@@ -28,9 +31,11 @@ body.dark {
   --accent-soft: rgba(59, 130, 246, 0.16);
   --accent-border-hover: rgba(59, 130, 246, 0.42);
   --border: #1f2937;
+  --border-glass: rgba(71, 85, 105, 0.45);
   --muted: #9ca3af;
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.38);
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.46);
+  --shadow-accent: 0 10px 20px rgba(59, 130, 246, 0.28);
   --bg-glow-1: rgba(59, 130, 246, 0.14);
   --bg-glow-2: rgba(56, 189, 248, 0.1);
   --hero-card-start: rgba(2, 6, 23, 0.95);
@@ -58,7 +63,7 @@ body {
 }
 
 html {
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: var(--scroll-offset);
 }
 
 .page {
@@ -79,7 +84,7 @@ header.site-header {
   position: sticky;
   top: 0.6rem;
   z-index: var(--z-header);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid var(--border-glass);
   border-radius: 999px;
   background: var(--surface-glass);
   backdrop-filter: blur(10px);
@@ -129,7 +134,7 @@ nav.main-nav a:hover {
 nav.main-nav a.active {
   background: var(--accent);
   color: #f9fafb;
-  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.26);
+  box-shadow: var(--shadow-accent);
 }
 
 button#theme-toggle {
