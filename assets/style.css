@@ -57,6 +57,10 @@ body {
   flex-direction: column;
 }
 
+html {
+  scroll-padding-top: 5.5rem;
+}
+
 .page {
   max-width: 1080px;
   width: 100%;
@@ -400,7 +404,9 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
-:focus-visible {
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
