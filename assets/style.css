@@ -14,6 +14,7 @@
   --shadow-accent: 0 8px 18px rgba(37, 99, 235, 0.26);
   --radius: 1rem;
   --z-header: 20;
+  --header-top-offset: 0.6rem;
   --scroll-offset: 5.5rem;
   --bg-glow-1: rgba(59, 130, 246, 0.18);
   --bg-glow-2: rgba(14, 165, 233, 0.15);
@@ -63,7 +64,7 @@ body {
 }
 
 html {
-  scroll-padding-top: var(--scroll-offset);
+  scroll-padding-top: calc(var(--header-top-offset) + var(--scroll-offset));
 }
 
 .page {
@@ -82,7 +83,7 @@ header.site-header {
   margin: 0.85rem auto 1.5rem;
   max-width: 1080px;
   position: sticky;
-  top: 0.6rem;
+  top: var(--header-top-offset);
   z-index: var(--z-header);
   border: 1px solid var(--border-glass);
   border-radius: 999px;
@@ -403,6 +404,7 @@ footer.site-footer {
 a {
   color: var(--accent);
   text-underline-offset: 0.16em;
+  text-decoration-thickness: 1px;
 }
 
 a:hover {
@@ -411,7 +413,7 @@ a:hover {
 
 a:focus-visible,
 button:focus-visible,
-[tabindex]:focus-visible {
+[tabindex]:not([tabindex="-1"]):focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
