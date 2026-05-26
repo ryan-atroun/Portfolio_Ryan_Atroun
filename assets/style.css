@@ -1,7 +1,7 @@
 :root {
   --bg: #f5f5f7;
   --bg-alt: #ffffff;
-  --surface: rgba(255, 255, 255, 0.78);
+  --surface-glass: rgba(255, 255, 255, 0.78);
   --text: #1f2933;
   --accent: #2563eb;
   --accent-soft: rgba(37, 99, 235, 0.08);
@@ -10,12 +10,14 @@
   --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
   --shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
   --radius: 1rem;
+  --z-header: 20;
 }
 
 body.dark {
   --bg: #020617;
   --bg-alt: #0b1220;
-  --surface: rgba(11, 18, 32, 0.82);
+  --surface-glass: rgba(11, 18, 32, 0.82);
+  --z-header: 20;
   --text: #e5e7eb;
   --accent: #3b82f6;
   --accent-soft: rgba(59, 130, 246, 0.16);
@@ -61,10 +63,10 @@ header.site-header {
   max-width: 1080px;
   position: sticky;
   top: 0.6rem;
-  z-index: 20;
+  z-index: var(--z-header);
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--surface-glass);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-soft);
 }
@@ -235,7 +237,7 @@ section h2 {
 section h2::after {
   content: "";
   display: block;
-  width: 58%;
+  width: 3.5rem;
   height: 3px;
   margin-top: 0.35rem;
   border-radius: 999px;
@@ -418,7 +420,10 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
+  .card,
+  .hero-card,
+  nav.main-nav a,
+  button#theme-toggle {
+    transition: none;
   }
 }
