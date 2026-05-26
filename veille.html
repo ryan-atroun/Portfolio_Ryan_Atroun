@@ -28,121 +28,68 @@
         <h1>Ma veille technologique</h1>
         <p class="lead">
           La veille technologique me permet de rester informé des évolutions de l&rsquo;informatique,
-          en particulier dans les domaines des systèmes, des réseaux et de la sécurité.
+          en particulier dans les domaines des systèmes, des réseaux, du cloud et de la sécurité.
         </p>
       </div>
       <div class="hero-card">
         <h2>Pourquoi faire de la veille&nbsp;?</h2>
         <p>
-          Les technologies évoluent très vite&nbsp;: nouvelles failles, nouvelles versions
-          de systèmes d’exploitation, nouveaux outils. Sans veille, il est difficile
-          de rester à jour et de prendre de bonnes décisions techniques.
+          Les infrastructures des TPE et PME évoluent vite&nbsp;: nouveaux usages cloud,
+          nouvelles menaces, supervision, sauvegarde et services collaboratifs.
+          Sans veille, il est difficile de rester à jour et de prendre de bonnes décisions techniques.
         </p>
         <small>La veille est un réflexe indispensable pour tout administrateur système ou réseau.</small>
       </div>
     </section>
 
-    <section aria-labelledby="definition">
-      <h2 id="definition">Définition de la veille technologique</h2>
-      <p>
-        La veille technologique consiste à <strong>surveiller en continu</strong> les
-        nouveautés, les risques et les bonnes pratiques liées à un domaine technique.
-        Elle repose sur la collecte d&rsquo;informations, leur tri et leur synthèse.
-      </p>
-      <p>
-        En informatique, cela peut concerner&nbsp;:
-      </p>
-      <ul>
-        <li>Les mises à jour de systèmes (Windows, Linux, etc.) ;</li>
-        <li>Les alertes de sécurité et nouvelles vulnérabilités ;</li>
-        <li>Les nouveaux outils d’administration, de supervision ou de sauvegarde ;</li>
-        <li>Les évolutions autour du cloud ou de la virtualisation.</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="organisation">
-      <h2 id="organisation">Comment j&rsquo;organise ma veille</h2>
-      <p>
-        Pour rester informé, j&rsquo;utilise plusieurs types de sources et d’outils.
-      </p>
+    <section aria-labelledby="veille-technologique">
+      <h2 id="veille-technologique">Veille technologique</h2>
       <div class="veille-layout">
-        <div>
-          <div class="veille-card">
-            <h3>Flux RSS et blogs</h3>
-            <p>
-              Les flux RSS permettent de regrouper les actualités techniques au même endroit.
-              Je m’intéresse par exemple à des sites spécialisés en sécurité et en systèmes.
-            </p>
-            <ul>
-              <li>Blogs sur l’administration système et le réseau ;</li>
-              <li>Sites d’actualité informatique ;</li>
-              <li>Articles techniques publiés par des éditeurs ou des communautés.</li>
-            </ul>
-          </div>
-
-          <div class="veille-card">
-            <h3>Vidéos &amp; communautés</h3>
-            <p>
-              Les plateformes vidéo et les communautés techniques sont utiles pour
-              comprendre rapidement un nouveau concept ou un outil.
-            </p>
-            <ul>
-              <li>Chaînes YouTube sur Linux, réseau et cybersécurité ;</li>
-              <li>Forums et communautés (Stack Overflow, Discord, etc.) ;</li>
-              <li>Conférences ou replays de présentations techniques.</li>
-            </ul>
-          </div>
-        </div>
-
-        <aside class="veille-card">
-          <h3>Utilisation de l&rsquo;IA pour la veille</h3>
+        <article class="veille-card">
+          <h3>SD-WAN</h3>
           <p>
-            Les outils d&rsquo;IA peuvent m&rsquo;aider à gagner du temps dans ma veille.
-            Je peux par exemple utiliser <strong>Gemini 3 Pro</strong> (version gratuite
-            pour les étudiants) pour&nbsp;:
+            Les entreprises remplacent progressivement leurs MPLS par du SD-WAN.
+            Plus flexible, moins cher, et compatible cloud-first. Chez SESTREA on
+            voit cette migration arriver chez les clients PME.
           </p>
-          <ul>
-            <li>Obtenir un résumé d’un article technique volumineux ;</li>
-            <li>Demander une explication claire sur une nouveauté ;</li>
-            <li>Organiser mes idées pour rédiger une synthèse ou une fiche.</li>
-          </ul>
+        </article>
+
+        <article class="veille-card">
+          <h3>Zero Trust</h3>
           <p>
-            L&rsquo;IA est un outil d’aide&nbsp;: je vérifie toujours les informations
-            importantes et je reformule avec mes propres mots.
+            Le modèle "ne faire confiance à personne par défaut" devient le standard.
+            En pratique&nbsp;: authentification forte, micro-segmentation, et révision
+            des accès utilisateurs. L&rsquo;ANSSI pousse fort dessus.
           </p>
-        </aside>
+        </article>
+
+        <article class="veille-card">
+          <h3>Supervision réseau</h3>
+          <p>
+            Zabbix reste la référence open-source. PRTG côté Windows. L&rsquo;enjeu
+            aujourd&rsquo;hui c&rsquo;est d&rsquo;aller au-delà des pings&nbsp;: logs,
+            métriques applicatives, alertes intelligentes.
+          </p>
+        </article>
+
+        <article class="veille-card">
+          <h3>Microsoft 365 &amp; Entra ID</h3>
+          <p>
+            Quasi tous les clients de SESTREA sont dessus. Conditional Access, MFA
+            obligatoire, gestion des appareils via Intune — c&rsquo;est le quotidien
+            de l&rsquo;alternance.
+          </p>
+        </article>
+
+        <article class="veille-card">
+          <h3>Sauvegarde 3-2-1</h3>
+          <p>
+            3 copies, 2 supports différents, 1 hors site. Règle simple mais encore
+            mal appliquée en PME. Veeam et Acronis sont les outils qu&rsquo;on déploie
+            le plus.
+          </p>
+        </article>
       </div>
-    </section>
-
-    <section aria-labelledby="exemple">
-      <h2 id="exemple">Exemple de sujet de veille</h2>
-      <p>
-        Un exemple de sujet sur lequel je peux faire de la veille est la
-        <strong>sécurité des serveurs web Apache</strong>.
-      </p>
-      <p>
-        Comme j&rsquo;ai déjà installé et configuré un serveur Apache, il est important
-        pour moi de suivre les bonnes pratiques de sécurisation&nbsp;:
-      </p>
-      <ul>
-        <li>Mises à jour régulières du serveur et des modules ;</li>
-        <li>Restriction de l’accès à certaines ressources ;</li>
-        <li>Surveillance des journaux (logs) pour détecter des comportements anormaux ;</li>
-        <li>Utilisation de certificats TLS pour chiffrer les échanges.</li>
-      </ul>
-      <p>
-        Pour ce type de veille, je peux consulter par exemple des ressources officielles
-        ou spécialisées comme&nbsp;:
-      </p>
-      <ul>
-        <li><a href="https://httpd.apache.org" target="_blank" rel="noopener noreferrer">La documentation officielle d&rsquo;Apache HTTP Server</a></li>
-        <li><a href="https://www.cert.ssi.gouv.fr" target="_blank" rel="noopener noreferrer">Les alertes de sécurité publiées par le CERT-FR</a></li>
-      </ul>
-      <p>
-        En combinant ces sources avec des outils de résumé et d’explication comme
-        Gemini 3 Pro, je peux rapidement identifier les points importants et les
-        appliquer ensuite dans mes configurations.
-      </p>
     </section>
   </main>
 
