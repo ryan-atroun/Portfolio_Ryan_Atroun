@@ -17,7 +17,6 @@ body.dark {
   --bg: #020617;
   --bg-alt: #0b1220;
   --surface-glass: rgba(11, 18, 32, 0.82);
-  --z-header: 20;
   --text: #e5e7eb;
   --accent: #3b82f6;
   --accent-soft: rgba(59, 130, 246, 0.16);
@@ -94,7 +93,7 @@ nav.main-nav {
 
 nav.main-nav a {
   text-decoration: none;
-  padding: 0.48rem 0.85rem;
+  padding: 0.5rem 0.85rem;
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 600;
