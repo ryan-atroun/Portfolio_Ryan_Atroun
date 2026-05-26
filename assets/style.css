@@ -1,21 +1,28 @@
 :root {
   --bg: #f5f5f7;
   --bg-alt: #ffffff;
+  --surface: rgba(255, 255, 255, 0.78);
   --text: #1f2933;
   --accent: #2563eb;
   --accent-soft: rgba(37, 99, 235, 0.08);
   --border: #d0d7e2;
   --muted: #6b7280;
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+  --radius: 1rem;
 }
 
 body.dark {
   --bg: #020617;
-  --bg-alt: #020617;
+  --bg-alt: #0b1220;
+  --surface: rgba(11, 18, 32, 0.82);
   --text: #e5e7eb;
   --accent: #3b82f6;
   --accent-soft: rgba(59, 130, 246, 0.16);
   --border: #1f2937;
   --muted: #9ca3af;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.38);
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.46);
 }
 
 *,
@@ -27,7 +34,10 @@ body.dark {
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top left, var(--accent-soft), var(--bg) 55%);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(59, 130, 246, 0.18), transparent 40%),
+    radial-gradient(circle at 90% 2%, rgba(14, 165, 233, 0.15), transparent 38%),
+    var(--bg);
   color: var(--text);
   min-height: 100vh;
   display: flex;
@@ -46,9 +56,17 @@ header.site-header {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.75rem 1.25rem;
-  margin: 0 auto 1.5rem;
+  padding: 0.65rem 1rem;
+  margin: 0.85rem auto 1.5rem;
   max-width: 1080px;
+  position: sticky;
+  top: 0.6rem;
+  z-index: 20;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
 }
 
 .logo {
@@ -59,10 +77,11 @@ header.site-header {
   height: 40px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: var(--bg-alt);
+  background: linear-gradient(145deg, var(--bg-alt), var(--accent-soft));
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.08em;
+  color: var(--accent);
 }
 
 nav.main-nav {
@@ -73,9 +92,10 @@ nav.main-nav {
 
 nav.main-nav a {
   text-decoration: none;
-  padding: 0.45rem 0.8rem;
+  padding: 0.48rem 0.85rem;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
   border: 1px solid transparent;
   color: var(--muted);
   background: transparent;
@@ -92,6 +112,7 @@ nav.main-nav a:hover {
 nav.main-nav a.active {
   background: var(--accent);
   color: #f9fafb;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.26);
 }
 
 button#theme-toggle {
@@ -101,6 +122,7 @@ button#theme-toggle {
   background: var(--bg-alt);
   cursor: pointer;
   font-size: 0.8rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -129,6 +151,7 @@ main {
   gap: 2rem;
   align-items: center;
   margin-bottom: 2.5rem;
+  padding: 0.2rem 0.1rem;
 }
 
 .hero-text h1 {
@@ -162,9 +185,15 @@ main {
   border-radius: 1.25rem;
   border: 1px solid var(--border);
   padding: 1.25rem;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), #020617);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), #0f172a 40%, #020617);
   color: #e5e7eb;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.42);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 46px rgba(15, 23, 42, 0.46);
 }
 
 .hero-card h2 {
@@ -199,6 +228,18 @@ section {
 section h2 {
   font-size: 1.2rem;
   margin-bottom: 0.6rem;
+  position: relative;
+  width: fit-content;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 58%;
+  height: 3px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), transparent);
 }
 
 section p {
@@ -213,10 +254,18 @@ section p {
 }
 
 .card {
-  border-radius: 0.95rem;
+  border-radius: var(--radius);
   border: 1px solid var(--border);
   padding: 1.1rem 1.15rem;
   background: var(--bg-alt);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: rgba(37, 99, 235, 0.35);
 }
 
 .card h3 {
@@ -270,6 +319,11 @@ li {
 .timeline-item {
   margin-bottom: 1rem;
   position: relative;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  padding: 0.85rem 0.9rem;
+  background: var(--bg-alt);
+  box-shadow: var(--shadow-soft);
 }
 
 .timeline-item::before {
@@ -303,10 +357,11 @@ li {
 }
 
 .veille-card {
-  border-radius: 1rem;
+  border-radius: var(--radius);
   border: 1px solid var(--border);
   padding: 1.1rem 1.15rem;
   background: var(--bg-alt);
+  box-shadow: var(--shadow-soft);
 }
 
 .veille-card h3 {
@@ -321,6 +376,20 @@ footer.site-footer {
   font-size: 0.78rem;
   color: var(--muted);
   text-align: center;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* Responsive */
@@ -345,5 +414,11 @@ footer.site-footer {
 
   .veille-layout {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
   }
 }
