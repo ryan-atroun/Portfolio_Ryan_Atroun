@@ -41,6 +41,15 @@ body.dark {
   --col-line: #3f3f46;
 }
 
+body.light {
+  --col-bg: #edebe4;
+  --col-surface: #f7f5f0;
+  --col-ink: #1c1917;
+  --col-muted: #706963;
+  --col-accent: #b63b0b;
+  --col-line: #d6d3cc;
+}
+
 *,
 *::before,
 *::after {
