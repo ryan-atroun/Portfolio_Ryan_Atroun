@@ -368,6 +368,51 @@ section {
   border-radius: 4px;
 }
 
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.media-card {
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--col-line);
+  border-radius: 4px;
+  background: var(--col-surface);
+}
+
+.media-card img,
+.tool-logo,
+.screenshot-preview {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.tool-logo {
+  max-height: 96px;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.screenshot-preview {
+  width: 100%;
+  border: 1px solid var(--col-line);
+  background: #fff;
+}
+
+.screenshot-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.screenshot-grid .media-card {
+  padding: 10px;
+}
+
 section {
   position: relative;
   padding: 80px 0;
@@ -402,13 +447,13 @@ section p {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: 26px;
 }
 
 .card {
-  grid-column: span 3;
+  grid-column: auto;
   min-width: 0;
   padding: 20px;
   border: 1px solid var(--col-line);
@@ -417,8 +462,9 @@ section p {
   transition: border-color 150ms ease, transform 150ms ease;
 }
 
-.card:nth-child(3n) {
-  grid-column: 2 / span 4;
+.card-grid > .card:only-child,
+.card-grid > .card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .card:hover {
@@ -533,12 +579,12 @@ section[aria-labelledby="veille-technologique"]::after {
 
 .veille-layout {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
 .veille-card {
-  grid-column: span 3;
+  grid-column: auto;
   min-width: 0;
   padding: 20px;
   border: 1px solid var(--col-line);
@@ -548,7 +594,7 @@ section[aria-labelledby="veille-technologique"]::after {
 }
 
 .veille-card:nth-child(5) {
-  grid-column: 2 / span 4;
+  grid-column: 1 / -1;
 }
 
 .veille-card:hover {
@@ -617,7 +663,11 @@ footer.site-footer {
 
   .card:nth-child(n),
   .veille-card:nth-child(n) {
-    grid-column: span 6;
+    grid-column: 1 / -1;
+  }
+
+  .image-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   section[aria-labelledby="competences"]::after {
